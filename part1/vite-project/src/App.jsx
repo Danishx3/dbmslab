@@ -1,7 +1,8 @@
 const App = () => {
+  console.log('Hello from component')
   return (
     <div>
-      <h1>hel lo</h1>
+      <p>Hello world</p>
     </div>
   )
 }
