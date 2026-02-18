@@ -30,6 +30,7 @@ const Phonebook = () => {
     const [persons, setPersons] = useState([])
     const [newName, setNewName] = useState('')
     const [newNumber, setNewNumber] = useState('')
+    const [newPlace, setNewPlace] = useState('')
     const [filter, setFilter] = useState('')
     const [notification, setNotification] = useState(null)
 
@@ -72,6 +73,7 @@ const Phonebook = () => {
             const personObject = {
                 name: newName,
                 number: newNumber,
+                place: newPlace,
             }
 
             personService
@@ -103,6 +105,7 @@ const Phonebook = () => {
 
     const handleNameChange = (event) => setNewName(event.target.value)
     const handleNumberChange = (event) => setNewNumber(event.target.value)
+    const handlePlaceChange = (event) => setNewPlace(event.target.value)
     const handleFilterChange = (event) => setFilter(event.target.value)
 
     const personsToShow = filter
@@ -121,6 +124,8 @@ const Phonebook = () => {
                 handleNameChange={handleNameChange}
                 newNumber={newNumber}
                 handleNumberChange={handleNumberChange}
+                newPlace={newPlace}
+                handlePlaceChange={handlePlaceChange}
             />
             <h3>Numbers</h3>
             <Persons persons={personsToShow} deletePerson={deletePerson} />
