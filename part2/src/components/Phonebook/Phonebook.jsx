@@ -9,18 +9,8 @@ const Notification = ({ notification }) => {
         return null
     }
 
-    const style = {
-        color: notification.type === 'error' ? 'red' : 'green',
-        background: 'lightgrey',
-        fontSize: 20,
-        borderStyle: 'solid',
-        borderRadius: 5,
-        padding: 10,
-        marginBottom: 10,
-    }
-
     return (
-        <div style={style}>
+        <div className={`notification ${notification.type}`}>
             {notification.message}
         </div>
     )
@@ -124,22 +114,30 @@ const Phonebook = () => {
         : persons
 
     return (
-        <div>
-            <h2>Phonebook</h2>
-            <Notification notification={notification} />
-            <Filter filter={filter} handleFilterChange={handleFilterChange} />
-            <h3>Add a new</h3>
-            <PersonForm
-                addPerson={addPerson}
-                newName={newName}
-                handleNameChange={handleNameChange}
-                newNumber={newNumber}
-                handleNumberChange={handleNumberChange}
-                newPlace={newPlace}
-                handlePlaceChange={handlePlaceChange}
-            />
-            <h3>Numbers</h3>
-            <Persons persons={personsToShow} deletePerson={deletePerson} />
+        <div className="phonebook-wrapper">
+            <div className="phonebook-container">
+                <h2 className="app-title">Phonebook</h2>
+                <Notification notification={notification} />
+                <Filter filter={filter} handleFilterChange={handleFilterChange} />
+
+                <div className="section">
+                    <h3 className="section-title">Add a new</h3>
+                    <PersonForm
+                        addPerson={addPerson}
+                        newName={newName}
+                        handleNameChange={handleNameChange}
+                        newNumber={newNumber}
+                        handleNumberChange={handleNumberChange}
+                        newPlace={newPlace}
+                        handlePlaceChange={handlePlaceChange}
+                    />
+                </div>
+
+                <div className="section">
+                    <h3 className="section-title">Numbers</h3>
+                    <Persons persons={personsToShow} deletePerson={deletePerson} />
+                </div>
+            </div>
         </div>
     )
 }

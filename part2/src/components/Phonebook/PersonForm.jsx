@@ -1,17 +1,17 @@
 const PersonForm = ({ addPerson, newName, handleNameChange, newNumber, handleNumberChange, newPlace, handlePlaceChange }) => {
     return (
-        <form onSubmit={addPerson}>
-            <div>
-                name: <input value={newName} onChange={handleNameChange} />
+        <form className="person-form" onSubmit={addPerson}>
+            <div className="form-group">
+                <span className="input-label">name:</span> <input className="form-input" value={newName} onChange={handleNameChange} />
             </div>
-            <div>
-                number: <input value={newNumber} onChange={handleNumberChange} />
+            <div className="form-group">
+                <span className="input-label">number:</span> <input className="form-input" value={newNumber} onChange={handleNumberChange} />
             </div>
-            <div>
-                place: <input value={newPlace} onChange={handlePlaceChange} />
+            <div className="form-group">
+                <span className="input-label">place:</span> <input className="form-input" value={newPlace} onChange={handlePlaceChange} />
             </div>
-            <div>
-                <button type="submit">add</button>
+            <div className="form-action">
+                <button className="btn btn-primary" type="submit">add</button>
             </div>
         </form>
     )

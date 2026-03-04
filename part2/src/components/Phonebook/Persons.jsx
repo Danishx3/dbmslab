@@ -1,11 +1,15 @@
 const Persons = ({ persons, deletePerson }) => {
     return (
-        <div>
+        <div className="persons-list">
             {persons.map(person =>
-                <p key={person.id}>
-                    {person.name} {person.number} {person.place}
-                    <button onClick={() => deletePerson(person.id)}>delete</button>
-                </p>
+                <div key={person.id} className="person-card">
+                    <div className="person-info">
+                        <span className="person-name">{person.name}</span>
+                        <span className="person-number">{person.number}</span>
+                        <span className="person-place">{person.place}</span>
+                    </div>
+                    <button className="btn btn-danger" onClick={() => deletePerson(person.id)}>delete</button>
+                </div>
             )}
         </div>
     )
