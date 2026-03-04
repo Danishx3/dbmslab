@@ -16,12 +16,5 @@
       "important": false
     }
   ],
-  "persons": [
-    {
-      "id": "96b2",
-      "name": "danish",
-      "number": "9048499130",
-      "place": "mariyad"
-    }
-  ]
+  "persons": []
 }

@@ -65,8 +65,13 @@ const Phonebook = () => {
                         notify(`Updated ${newName}`)
                     })
                     .catch(error => {
-                        notify(`Information of ${newName} has already been removed from server`, 'error')
-                        setPersons(persons.filter(p => p.id !== existingPerson.id))
+                        const message = error.response && error.response.data && error.response.data.error
+                            ? error.response.data.error
+                            : `Information of ${newName} has already been removed from server`
+                        notify(message, 'error')
+                        if (!error.response || error.response.status === 404) {
+                            setPersons(persons.filter(p => p.id !== existingPerson.id))
+                        }
                     })
             }
         } else {
@@ -83,6 +88,12 @@ const Phonebook = () => {
                     setNewName('')
                     setNewNumber('')
                     notify(`Added ${newName}`)
+                })
+                .catch(error => {
+                    const message = error.response && error.response.data && error.response.data.error
+                        ? error.response.data.error
+                        : 'Failed to add person'
+                    notify(message, 'error')
                 })
         }
     }
