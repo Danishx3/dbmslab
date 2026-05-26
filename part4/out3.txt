@@ -1,0 +1,19 @@
+[dotenv@17.3.1] injecting env (3) from .env -- tip: ⚙️  suppress all logs with { quiet: true }
+connecting to mongodb+srv://danishkpmariyad_db_user:ZLzHPumTv7N2w_T@cluster0.u9rbiyt.mongodb.net/bloglistApp?retryWrites=true&w=majority&appName=Cluster0
+C:\Users\USER\Desktop\react\part4\node_modules\express\lib\application.js:217
+    throw new TypeError('app.use() requires a middleware function')
+    ^
+
+TypeError: app.use() requires a middleware function
+    at Function.use (C:\Users\USER\Desktop\react\part4\node_modules\express\lib\application.js:217:11)
+    at Object.<anonymous> (C:\Users\USER\Desktop\react\part4\app.js:30:5)
+    at Module._compile (node:internal/modules/cjs/loader:1730:14)
+    at Object..js (node:internal/modules/cjs/loader:1895:10)
+    at Module.load (node:internal/modules/cjs/loader:1465:32)
+    at Function._load (node:internal/modules/cjs/loader:1282:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:235:24)
+    at Module.require (node:internal/modules/cjs/loader:1487:12)
+    at require (node:internal/modules/helpers:135:16)
+
+Node.js v22.16.0

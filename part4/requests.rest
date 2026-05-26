@@ -1,0 +1,49 @@
+### GET all blogs
+GET http://localhost:3003/api/blogs
+
+### CREATE a new user
+POST http://localhost:3003/api/users
+Content-Type: application/json
+
+{
+  "username": "danish",
+  "name": "Danish",
+  "password": "password123"
+}
+
+### GET all users
+GET http://localhost:3003/api/users
+
+### LOGIN and get a token
+# IMPORTANT: Copy the "token" value from the response
+POST http://localhost:3003/api/login
+Content-Type: application/json
+
+{
+  "username": "danish",
+  "password": "password123"
+}
+
+### CREATE a new blog (Make sure to replace <YOUR_TOKEN> with the actual token from the previous step)
+POST http://localhost:3003/api/blogs
+Content-Type: application/json
+Authorization: Bearer <YOUR_TOKEN>
+
+{
+  "title": "My First Full Stack Open Blog",
+  "author": "Danish",
+  "url": "http://example.com/blog",
+  "likes": 10
+}
+
+### DELETE a blog by ID (Replace the ID and TOKEN)
+DELETE http://localhost:3003/api/blogs/<BLOG_ID_HERE>
+Authorization: Bearer <YOUR_TOKEN>
+
+### UPDATE a blog by ID (Replace the ID)
+PUT http://localhost:3003/api/blogs/<BLOG_ID_HERE>
+Content-Type: application/json
+
+{
+  "likes": 50
+}
